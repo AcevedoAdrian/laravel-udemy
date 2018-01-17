@@ -8,6 +8,10 @@
             text-decoration: none;
             color: #2ab27b;
         }
+        .error{
+            color:red;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
