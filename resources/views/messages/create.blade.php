@@ -8,7 +8,7 @@
 
     @else
         <h2>Escribeme</h2>
-        <form action="mensaje" method="post">
+        <form action="{{ route('mensajes.store') }}" method="post">
             {{--esto crea el tocken para poder validar para pasar el middleware devuelve el tocken de la sesion--}}
             {!! csrf_field() !!}
             <p><label for="nombre">
@@ -26,7 +26,7 @@
             </p>
             <p><label for="texto">
                     Mensaje
-                    <textarea name="texto" value="{{old('texto')}}"> </textarea>
+                    <textarea name="texto">{{old('texto')}} </textarea>
                     {!!   $errors->first('texto','<span class=error>:message</span>')!!}
 
                 </label>

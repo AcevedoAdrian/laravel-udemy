@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 
-use App\Message;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
 
 
 class MessagesController extends Controller
@@ -20,9 +18,8 @@ class MessagesController extends Controller
      */
     public function index()
     {
-
-        $mensajes = Message::all();
-
+        //
+        $mensajes = DB::table('messages')->get();
         return view('messages.index',compact('mensajes'));
 
     }

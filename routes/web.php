@@ -15,7 +15,7 @@
 Route::get('/',['as' => 'home','uses'=>'PageController@home']);
 
 /**  Rutas con nombres, esto lo hacemos asignandole un alias a la ruta  con la palabra reservada 'as' y asigandole
- un nombre, todo esto encerrando la funcion entre corchetes **/
+un nombre, todo esto encerrando la funcion entre corchetes **/
 Route::get('contactanos', [ 'as'=> 'contactos', 'uses'=>'PageController@contact']);
 
 Route::post('mensaje', 'PageController@mensaje');
@@ -31,4 +31,13 @@ Route::get('saludos/{nombre?}', ['as' => 'saludos', 'uses' =>'PageCOntroller@sal
 //    return view('saludos',compact('nombre'));
 //}])-> where('nombre', "[A-Za-z]+");
 
-Route::get('mensaje/create',['as'=>'messages.create', 'uses'=>'MessagesController@create']);
+Route::resource('mensajes', 'MessagesController');
+//rutas
+//Route::get('mensaje',['as'=>'messages.index', 'uses'=>'MessagesController@index']);
+//Route::get('mensaje/create',['as'=>'messages.create', 'uses'=>'MessagesController@create']);
+//Route::post('mensaje',['as'=>'messages.store', 'uses'=>'MessagesController@store']);
+//Route::get('mensaje/{id}',['as'=>'messages.show', 'uses'=>'MessagesController@show']);
+//Route::get('mensaje/{id}/edit',['as'=>'messages.edit', 'uses'=>'MessagesController@edit']);
+//Route::put('mensaje/{id}',['as'=>'messages.update', 'uses'=>'MessagesController@update']);
+//Route::delete('mensaje/{id}',['as'=>'messages.destroy', 'uses'=>'MessagesController@destroy']);
+
